@@ -1,0 +1,124 @@
+<TMU|<tuple|1.1.0|2025.1.1>>
+
+<style|<tuple|generic|number-europe>>
+
+<\body>
+  <\hide-preamble>
+    \;
+
+    <assign|iff|<macro|if and only if>>
+
+    <assign|easypolynpls1|<macro|<math|a<rsub|n+1>x<rsup|n+1>+a<rsub|n>x<rsup|n>+\<ldots\>+a<rsub|1> x>>>
+  </hide-preamble>
+
+  Lie Algebra is developed by <chapter*|Marius Sophus Lie>
+
+  He was a Norwegian guy who was not as notable as Abel and mainly spent his life in Germany, which is disliked by our teacher Futorny.
+
+  <\definition>
+    \ An Algebra <with|font|Bbb|A> is a system with a non-epmty set <math|S> wtih <math|k> operations \<sigma\><math|<rsub|1>>,<math|\<sigma\><rsub|2>,\<ldots\>,>\<sigma\><math|<rsub|k>> s.t. all elements under operation are still in the set <math|S.>
+
+    \;
+  </definition>
+
+  <\definition>
+    A Lie Algebra Ł is a <math|K>- Vector Space with an opration [-,-]. Here, [-,-] is a bilinear operation s.t. [<math|x>,<math|x>] = 0 and <math|<around*|[|x,<around*|[|y,z|]>+<around*|[||\<nobracket\>>y,<around*|[|x,z|]>+<around*|[|z,<around*|[|x,y|]>|]>=0|]>,\<forall\>x,y,z\<in\>Ł>
+
+    <\warning*>
+      a) [<math|x,x>] = 0 \ \<forall\><math|x>\<in\> Ł
+
+      \<leftrightarrow\> b) <math|<around*|[|x,y|]>+<around*|[|y,x|]>=0 > \<forall\> <math|x,y\<in\>Ł.> \ \ \ \ \ \ <iff> \ \<chi\>(K) \<neq\> 2.
+
+      Reason: <math|<around*|[|x+y,x+y|]>=0> \<leftrightarrow\> <math|<around*|[|x,x|]>+<around*|[|y,y|]>+<around*|[|x,y|]>+<around*|[|y,x|]>=0>.
+
+      \;
+    </warning*>
+
+    \;
+  </definition>
+
+  <\example>
+    We Let <math|<around*|[|x,y|]>=0,\<forall\>x,y\<in\>Ł>. A trivial one.
+
+    \;
+  </example>
+
+  <\example>
+    For vector space <math|E<rsup|3>>, we let the cross-product be the bracket notion.
+  </example>
+
+  <\example>
+    We Let <math|<around*|[|x,y|]>=x\<cdot\>y-y\<cdot\>x>. It is easy to verify that the Jaccobi identity is satisfied. Here <math|x,y\<in\>A.> <math|A >is an associative Algebra. In this case, we denote by <math|A<rsup|lie>>. Often(Maybe sometimes),
+
+    <math|A=M<rsub|n><around*|(|K|)>>, We denote \ End(V )<math|<rsup|lie>> := <with|font|Euler|gl><math|<rsub|n><around*|(|K|)>.>
+  </example>
+
+  <\definition>
+    Given a subspace <with|font|cal|H> \<subset\> Ł, if the bracket operation [-,-] is closed under <with|font|cal|H>, Then <with|font|cal|H> is a Lie Subalgebra. <with|font|cal|>
+  </definition>
+
+  <\example>
+    <with|font|Euler|sl><math|<rsub|n><around*|(|K|)>> := {x \<in\> <with|font|Euler|gl><math|<rsub|n>>(k) : Trace(x) = 0}
+
+    \;
+  </example>
+
+  <\definition>
+    A linear map d : A \<rightarrow\> A is called a derivation if d(ab) = ad(b) + bd(a) for all a,b \<in\> A. We denote the set of all derivations by Der(A).
+  </definition>
+
+  <\exercise>
+    Show that for vector space <math|K<around*|[|x|]>>, Der(A) \ = {<math|h<around*|(|x|)>\<cdot\><frac|d|d x> >\|<math|h<around*|(|x|)>\<in\>K<around*|[|x|]>>}
+
+    <\solution*>
+      By the definition, <math|d<around*|(|1|)>=d<around*|(|1\<times\>1|)>=2d<around*|(|1|)>.> Hence <math|d<around*|(|1|)>=0.>
+
+      Let <math|d<around*|(|x|)>=h<around*|(|x|)>.>
+
+      By mathematics induction, we can say for <math|deg>(<math|f>) \<leq\> <math|n>, this holds.
+
+      Witout loss of generality, we can assume <math|f<around*|(|x|)>= <easypolynpls1>>.
+
+      <math|d<around*|(|f<around*|(|x|)>|)>=d<around*|(|x<around*|(|a<rsub|n+1>x<rsup|n>+a<rsub|n>x<rsup|n-1>+1|)>|)>=h<around*|(|x|)><around*|(|<around*|(|n+1|)>a<rsub|n+1>x<rsup|n-1>+<around*|(|n-1|)>a<rsub|n>x<rsup|n-2>+\<cdots\>a<rsub|1>|)>+h<around*|(|x|)>f<around*|(|x|)>=h<around*|(|x|)><frac|d f<around*|(|x|)>|d x>.>
+
+      \;
+    </solution*>
+  </exercise>
+
+  <\note>
+    Let A be a commutative, associative algebra, Der(A) is closed under the bracket operation which can be noted as <math|<around*|[|d<rsub|1>,d<rsub|2>|]>=d<rsub|1>d<rsub|2>-d<rsub|2>d<rsub|1>.>
+
+    \;
+  </note>
+
+  \;
+
+  <\definition>
+    \ Definition (Lie Ideal). I \<subset\> <with|font|cal|<with|font|Euler|g>> is a Lie ideal if for all <math|x> \<in\> <with|font|Euler|g> and <math|a> \<in\> I, [<math|x>, <math|a>] \<in\> I.
+
+    <\example>
+      For vector space <math|M<rsub|n><around*|(|K|)><rsup|lie>,> t<math|I<rsub|n>> is an ideal, for \ you got an zero.
+    </example>
+  </definition>
+</body>
+
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+    <associate|page-screen-margin|false>
+  </collection>
+</initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|?|1|C:\\Users\\wenji\\AppData\\Roaming\\moganlab\\texts\\scratch\\no_name_3.tm>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|Marius Sophus Lie> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-1><vspace|1fn>
+    </associate>
+  </collection>
+</auxiliary>
